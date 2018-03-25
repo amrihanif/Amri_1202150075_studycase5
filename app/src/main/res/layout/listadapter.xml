@@ -35,7 +35,7 @@
         <LinearLayout
             android:layout_width="127dp"
             android:layout_height="76dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="60dp"
             android:orientation="vertical">
 
             <TextView
