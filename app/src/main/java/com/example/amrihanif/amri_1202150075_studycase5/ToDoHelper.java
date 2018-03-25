@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 
 /**
- * Created by ASUS on 3/25/2018.
+ * Created by Amri Hanif on 3/25/2018.
  */
 
 public class ToDoHelper extends SQLiteOpenHelper{

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ToDoHelper db;
     RecyclerView rc;
     ToDoAdapter adapter;
-    ArrayList<ModelToDo> listitem;
+    ArrayList<ModelToDo> listItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,18 +42,18 @@ public class MainActivity extends AppCompatActivity {
 
         //Deklarasi objek yang akan digunakan
         rc = findViewById(R.id.recyclerTodo);
-        listitem = new ArrayList<>();
+        listItem = new ArrayList<>();
 
         //Mengambil kembali data dari database
         db = new ToDoHelper(this);
-        db.getAllItems(listitem);
+        db.getAllItems(listItem);
 
         //Mengambil kembali SharedPreference
         SharedPreferences pref = this.getApplicationContext().getSharedPreferences("pref", 0);
         int warna = pref.getInt("background", R.color.red);
 
         //Menentukan adapter untuk recyclerview_todolist
-        adapter = new ToDoAdapter(this, listitem, warna);
+        adapter = new ToDoAdapter(this, listItem, warna);
         rc.setHasFixedSize(true);
         rc.setLayoutManager(new LinearLayoutManager(this));
         rc.setAdapter(adapter);

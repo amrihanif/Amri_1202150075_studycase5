@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class AddTodo extends AppCompatActivity {
 
     EditText name, description, priority;
-    ToDoHelper db;
+    ToDoHelper helper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class AddTodo extends AppCompatActivity {
         name = findViewById(R.id.nametodo);
         description = findViewById(R.id.desc);
         priority = findViewById(R.id.priority);
-        db = new ToDoHelper(this);
+        helper= new ToDoHelper(this);
     }
 
     //Method ketika tombol back ditekan
@@ -34,7 +34,7 @@ public class AddTodo extends AppCompatActivity {
 
     //Method ketika tombol tambah ditekan
     public void add(View view) {
-        if (db.masukkandata(new ModelToDo(name.getText().toString(), description.getText().toString(), priority.getText().toString()))) {
+        if (helper.masukkandata(new ModelToDo(name.getText().toString(), description.getText().toString(), priority.getText().toString()))) {
             Toast.makeText(this, "Todo added", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, MainActivity.class));
             this.finish();

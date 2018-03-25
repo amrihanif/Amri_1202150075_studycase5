@@ -30,13 +30,6 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         this.id = id;
     }
 
-    public void remove(int i){
-        item.remove(i);
-        notifyItemRemoved(i);
-        notifyItemRangeChanged(i, item.size());
-    }
-
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View V = LayoutInflater.from(context).inflate(R.layout.listadapter,parent,false);
@@ -73,5 +66,10 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
             priority = itemView.findViewById(R.id.todoPriority);
             eView = itemView.findViewById(R.id.card);
         }
+    }
+    public void remove(int i){
+        item.remove(i);
+        notifyItemRemoved(i);
+        notifyItemRangeChanged(i, item.size());
     }
 }
